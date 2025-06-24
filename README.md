@@ -5,9 +5,11 @@ This module implements a minimum priority queue using a binary min-heap. Both in
 ## Features
 
 - **Priority Queues**: Separate implementations for integer (`pqi_t`) and real (`pqr_t`) priorities.
-- **Dynamic Sizing**: Automatically resizes the backing array as needed.
+- **Dynamic Sizing**: Automatically increases storage size
 
 ## How to Use
+
+This implementation stores an integer as the "value" of each node, and thus no pointers, strings or other data types. Such data can be stored in an array by the calling application, and the priority queue can then be used to index that array. See `test.f90` for an example.
 
 ### Module Usage
 To use the priority queue, include the module in your Fortran program:
@@ -52,6 +54,4 @@ call pqi_peep(int_queue, value, priority)
 call pqi_destroy(int_queue)
 ```
 
-## Example
 
-Refer to `test.f90`
